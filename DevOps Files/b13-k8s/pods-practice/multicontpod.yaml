@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multicontpod
+  labels:
+    app: facebook
+
+spec:
+  containers:
+    - name: cont1
+      image: devopshubg333/batch13:mindcircuit13img
+
+    - name: cont2 
+      image: devopshubg333/batch13:httpdimage
