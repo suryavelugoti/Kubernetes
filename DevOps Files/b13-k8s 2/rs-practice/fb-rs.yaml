@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: fb-rs
+  labels:
+    app: facebook
+spec:
+  selector:
+    matchLabels:
+      app: facebook
+    
+  replicas: 3
+  template:
+    metadata:
+      name: fbpod
+      labels:
+        app: facebook
+        env: dev
+    spec:
+      containers:
+        - name: fbpod-cont
+          image: devopshubg333/batch13:mindcircuit13img
+
+    

@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fbpod
+  labels:
+    app: facebook
+    env: dev
+spec:
+  containers:
+    - name: fbpod-cont
+      image: devopshubg333/batch13:mindcircuit13img
