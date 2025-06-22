@@ -1,0 +1,10 @@
+kind: RoleBinding
+metadata:
+  name: read-pods
+subjects:
+- kind: User
+  name: surya
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
