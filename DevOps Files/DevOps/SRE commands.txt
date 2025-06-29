@@ -1,0 +1,221 @@
+**DevOps Daily Use Commands (with Reasons) - Interview Ready Guide**
+
+---
+
+### 🔧 Linux Commands (System Monitoring, File Management, Process Control)
+
+1. `top` - Monitor system processes and resource usage.
+2. `htop` - Interactive process viewer with a user-friendly UI.
+3. `df -h` - View disk usage in human-readable format.
+4. `du -sh *` - Check size of files/directories.
+5. `free -m` - Show memory usage in MB.
+6. `uptime` - Check system uptime and load average.
+7. `ps aux` - List all running processes.
+8. `kill -9 <pid>` - Forcefully stop a process.
+9. `chmod +x script.sh` - Make a script executable.
+10. `chown user:group file` - Change file ownership.
+11. `ls -l` - Long listing format to view file details.
+12. `cat`, `less`, `more` - View file contents.
+13. `tail -f /var/log/syslog` - Monitor logs in real time.
+14. `scp file user@host:/path/` - Secure copy files remotely.
+15. `ssh user@host` - SSH into a server.
+16. `hostname` - Check system hostname.
+17. `uname -a` - Show system information.
+18. `whoami` - Show current logged-in user.
+19. `history` - Show previously executed commands.
+20. `crontab -e` - Edit scheduled cron jobs.
+
+**Why**: These help in monitoring systems, managing files, user access, automating tasks, and troubleshooting.
+
+---
+
+### 🛎️ Networking Commands
+
+1. `ip a` - Show IP address and interface details.
+2. `ifconfig` - Legacy tool to view network configuration.
+3. `ping <host>` - Check host availability.
+4. `traceroute <host>` - Show route taken by packets.
+5. `netstat -tulnp` - Show listening ports.
+6. `ss -tuln` - Replacement for netstat, faster.
+7. `telnet <host> <port>` - Test port connectivity.
+8. `curl -I http://example.com` - Show HTTP headers.
+9. `wget http://example.com` - Download files.
+10. `dig <domain>` - Query DNS records.
+11. `nslookup <domain>` - Legacy DNS lookup.
+12. `iptables -L` - View firewall rules.
+13. `nmap -sT <IP>` - Scan open ports.
+14. `tcpdump -i eth0` - Capture network traffic.
+15. `route -n` - View routing table.
+16. `hostname -I` - Get IP address.
+17. `ethtool eth0` - View NIC info.
+18. `nmcli dev status` - View network manager devices.
+19. `ip route` - Show routing table.
+20. `arp -a` - View ARP cache.
+
+**Why**: Essential for debugging network issues, connectivity testing, port/traffic analysis, DNS, and firewall management.
+
+---
+
+### 📅 Jenkins Commands
+
+1. `sudo systemctl status jenkins` - Check Jenkins service status.
+2. `sudo systemctl restart jenkins` - Restart Jenkins.
+3. `cat /var/log/jenkins/jenkins.log` - Jenkins logs.
+4. `jenkins-cli.jar -s http://localhost:8080 help` - Jenkins CLI help.
+5. `jenkins-cli.jar -s http://localhost:8080 list-jobs` - List jobs.
+6. `jenkins-cli.jar -s http://localhost:8080 build job-name` - Trigger job.
+7. `jenkins-cli.jar -s http://localhost:8080 get-job job-name` - View job config.
+8. `jenkins-cli.jar -s http://localhost:8080 create-job job-name < config.xml` - Create job.
+9. `jenkins-cli.jar -s http://localhost:8080 delete-job job-name` - Delete job.
+10. `jenkins-cli.jar -s http://localhost:8080 reload-configuration` - Reload config.
+11. `env` inside Jenkinsfile - Check environment variables.
+12. `pipeline { agent any }` - Jenkins pipeline syntax.
+13. `stage('Build') { steps { ... } }` - Define pipeline stages.
+14. `post { always { ... } }` - Always run this post build.
+15. `input 'Approve Deployment?'` - Manual approval step.
+16. `archiveArtifacts artifacts: '**/*.jar'` - Archive build artifacts.
+17. `checkout scm` - Checkout code from source.
+18. `sh 'mvn clean install'` - Run shell commands.
+19. `withCredentials([string(credentialsId: 'my-pass', variable: 'PASS')])` - Use credentials securely.
+20. `build job: 'Deploy-App'` - Trigger another job.
+
+**Why**: Key for automation, CI/CD implementation, job configurations, pipeline scripting, and service management.
+
+---
+
+### 💡 Docker Commands
+
+1. `docker ps` - List running containers.
+2. `docker ps -a` - List all containers.
+3. `docker images` - List Docker images.
+4. `docker run -d -p 80:80 nginx` - Run container.
+5. `docker exec -it container bash` - Access container shell.
+6. `docker build -t myapp .` - Build image.
+7. `docker logs container` - View container logs.
+8. `docker stop container` - Stop container.
+9. `docker rm container` - Remove container.
+10. `docker rmi image` - Remove image.
+11. `docker-compose up -d` - Start services with Docker Compose.
+12. `docker-compose down` - Stop and remove containers.
+13. `docker inspect container` - View container details.
+14. `docker network ls` - List networks.
+15. `docker volume ls` - List volumes.
+16. `docker stats` - Monitor container resource usage.
+17. `docker tag source target` - Tag images.
+18. `docker push repo/image` - Push image to registry.
+19. `docker pull image` - Pull image.
+20. `docker cp container:/path ./` - Copy from container.
+
+**Why**: Vital for managing containers, troubleshooting, building images, deploying services, and debugging.
+
+---
+
+### ⚖️ Kubernetes (kubectl)
+
+1. `kubectl get pods` - List all pods.
+2. `kubectl get svc` - List services.
+3. `kubectl get deployments` - Show deployments.
+4. `kubectl describe pod <pod>` - Pod details.
+5. `kubectl logs <pod>` - Pod logs.
+6. `kubectl exec -it <pod> -- bash` - Shell into pod.
+7. `kubectl apply -f file.yaml` - Apply config.
+8. `kubectl delete -f file.yaml` - Delete resources.
+9. `kubectl scale deployment <name> --replicas=3` - Scale pods.
+10. `kubectl expose pod <pod> --port=80 --type=NodePort` - Expose pod.
+11. `kubectl get nodes` - List nodes.
+12. `kubectl cordon node` - Mark node unschedulable.
+13. `kubectl drain node` - Evict pods from node.
+14. `kubectl top pod` - Pod resource usage.
+15. `kubectl edit deployment <name>` - Edit deployment.
+16. `kubectl rollout restart deployment <name>` - Restart pods.
+17. `kubectl rollout status deployment <name>` - Deployment status.
+18. `kubectl config view` - Show kubeconfig.
+19. `kubectl version` - Show version.
+20. `kubectl api-resources` - List all API resources.
+
+**Why**: Crucial for cluster management, app deployment, monitoring, and scaling containers.
+
+---
+
+### ⚖️ Ansible Commands
+
+1. `ansible all -m ping` - Test connectivity.
+2. `ansible-inventory --list` - Show inventory.
+3. `ansible-playbook playbook.yml` - Run playbook.
+4. `ansible-playbook --check playbook.yml` - Dry run.
+5. `ansible-playbook --syntax-check playbook.yml` - Syntax check.
+6. `ansible localhost -m setup` - Gather facts.
+7. `ansible all -m shell -a "uptime"` - Run command.
+8. `ansible-galaxy init role_name` - Create role.
+9. `ansible-galaxy install username.role_name` - Install role.
+10. `ansible-doc -l` - List modules.
+11. `ansible-doc <module>` - Module help.
+12. `ansible-vault encrypt file.yml` - Encrypt file.
+13. `ansible-vault decrypt file.yml` - Decrypt file.
+14. `ansible-playbook --ask-vault-pass` - Prompt vault password.
+15. `ansible-config dump --only-changed` - View config.
+16. `ansible-pull -U <repo>` - Pull from Git and run.
+17. `ansible-playbook -i hosts site.yml` - Use custom inventory.
+18. `ansible all -a "/bin/echo hello"` - Run simple command.
+19. `ansible-playbook -e "var=value"` - Pass extra vars.
+20. `ansible-playbook --limit "host1"` - Limit to host.
+
+**Why**: Automate configuration management, provisioning, and ensure idempotency.
+
+---
+
+### 🛠️ Terraform Commands
+
+1. `terraform init` - Initialize configuration.
+2. `terraform validate` - Validate syntax.
+3. `terraform fmt` - Format code.
+4. `terraform plan` - Preview changes.
+5. `terraform apply` - Apply changes.
+6. `terraform destroy` - Tear down infra.
+7. `terraform state list` - Show state objects.
+8. `terraform state show <resource>` - Details of resource.
+9. `terraform output` - Show outputs.
+10. `terraform taint <resource>` - Force recreation.
+11. `terraform untaint <resource>` - Remove taint.
+12. `terraform import <address> <id>` - Import existing infra.
+13. `terraform graph` - Visualize dependency graph.
+14. `terraform workspace list` - Show workspaces.
+15. `terraform workspace new dev` - Create workspace.
+16. `terraform console` - Interactive shell.
+17. `terraform providers` - Show providers used.
+18. `terraform version` - Version check.
+19. `terraform refresh` - Sync state file.
+20. `terraform apply -auto-approve` - Skip prompt.
+
+**Why**: Required for infrastructure automation, provisioning, tracking changes, and managing cloud environments.
+
+---
+
+### ⚖️ ArgoCD Commands
+
+1. `argocd login <server>` - Login to Argo server.
+2. `argocd context` - View current context.
+3. `argocd app list` - List applications.
+4. `argocd app create <app>` - Create app.
+5. `argocd app sync <app>` - Sync app with Git.
+6. `argocd app delete <app>` - Delete app.
+7. `argocd app rollback <app> <revision>` - Rollback.
+8. `argocd app diff <app>` - View Git diff.
+9. `argocd app get <app>` - Get app details.
+10. `argocd app logs <app>` - View app logs.
+11. `argocd cluster list` - List connected clusters.
+12. `argocd app history <app>` - View deployment history.
+13. `argocd app set <app> --sync-policy automated` - Auto-sync.
+14. `argocd repo list` - List repositories.
+15. `argocd repo add <repo>` - Add repo.
+16. `argocd app wait <app>` - Wait for app sync.
+17. `argocd logout` - Logout.
+18. `argocd proj list` - List projects.
+19. `argocd proj create` - Create project.
+20. `argocd app patch` - Patch app config.
+
+**Why**: Essential for GitOps workflows, continuous deployment, app health/status tracking, and auto-syncing apps with source.
+
+---
+
+Let me know if you want these commands tailored for specific [cloud providers](f), [CI/CD integrations](f), or [interview scenario simulations](f).
