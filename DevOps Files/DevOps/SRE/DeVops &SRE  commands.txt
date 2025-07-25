@@ -2,7 +2,7 @@
 
 ---
 
-### 🔧 Linux Commands (System Monitoring, File Management, Process Control)
+Linux Commands (System Monitoring, File Management, Process Control)
 
 1. `top` - Monitor system processes and resource usage.
 2. `htop` - Interactive process viewer with a user-friendly UI.
@@ -29,7 +29,7 @@
 
 ---
 
-### 🛎️ Networking Commands
+Networking Commands
 
 1. `ip a` - Show IP address and interface details.
 2. `ifconfig` - Legacy tool to view network configuration.
@@ -52,38 +52,10 @@
 19. `ip route` - Show routing table.
 20. `arp -a` - View ARP cache.
 
-**Why**: Essential for debugging network issues, connectivity testing, port/traffic analysis, DNS, and firewall management.
 
 ---
 
-### 📅 Jenkins Commands
-
-1. `sudo systemctl status jenkins` - Check Jenkins service status.
-2. `sudo systemctl restart jenkins` - Restart Jenkins.
-3. `cat /var/log/jenkins/jenkins.log` - Jenkins logs.
-4. `jenkins-cli.jar -s http://localhost:8080 help` - Jenkins CLI help.
-5. `jenkins-cli.jar -s http://localhost:8080 list-jobs` - List jobs.
-6. `jenkins-cli.jar -s http://localhost:8080 build job-name` - Trigger job.
-7. `jenkins-cli.jar -s http://localhost:8080 get-job job-name` - View job config.
-8. `jenkins-cli.jar -s http://localhost:8080 create-job job-name < config.xml` - Create job.
-9. `jenkins-cli.jar -s http://localhost:8080 delete-job job-name` - Delete job.
-10. `jenkins-cli.jar -s http://localhost:8080 reload-configuration` - Reload config.
-11. `env` inside Jenkinsfile - Check environment variables.
-12. `pipeline { agent any }` - Jenkins pipeline syntax.
-13. `stage('Build') { steps { ... } }` - Define pipeline stages.
-14. `post { always { ... } }` - Always run this post build.
-15. `input 'Approve Deployment?'` - Manual approval step.
-16. `archiveArtifacts artifacts: '**/*.jar'` - Archive build artifacts.
-17. `checkout scm` - Checkout code from source.
-18. `sh 'mvn clean install'` - Run shell commands.
-19. `withCredentials([string(credentialsId: 'my-pass', variable: 'PASS')])` - Use credentials securely.
-20. `build job: 'Deploy-App'` - Trigger another job.
-
-**Why**: Key for automation, CI/CD implementation, job configurations, pipeline scripting, and service management.
-
----
-
-### 💡 Docker Commands
+ Docker Commands
 
 1. `docker ps` - List running containers.
 2. `docker ps -a` - List all containers.
