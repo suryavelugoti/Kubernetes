@@ -1,1 +1,12 @@
-
+As an SRE/DevOps engineer, consider these points:
+Area	What to check
+Docker network	Both containers must be connected to the same network.
+Container name	Use the correct container name or network alias as hostname.
+Port	Ensure the destination application is listening on the correct port.
+Firewall	Check host firewall and network restrictions.
+Application config	Verify hostname, port, username and password.
+Container health	Check whether both containers are running and healthy.
+Logs	Check application and database logs.
+Security	Avoid hardcoding passwords in Dockerfiles or source code.
+Persistence	Use Docker volumes for database data.
+Dependencies	Ensure the database is ready before the application starts connecting.
